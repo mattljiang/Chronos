@@ -227,7 +227,7 @@ const Occupied = React.memo(() => {
               </Card>
             </div>
           ))}
-          //?does addmodal have to be different than modal
+          {/* //?does addmodal have to be different than modal */}
           <Modal open={addOpen} onClose={() => setAddOpen(false)}>
             <AddModal setOpen={setAddOpen} />
           </Modal>
