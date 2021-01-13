@@ -27,6 +27,7 @@ ipcMain.on('connect', async (message: Electron.IpcMainEvent, index: number) => {
     // get index from application context
     const fileContents = fs.readFileSync(path.resolve(__dirname, '../user/settings.json'), 'utf8');
 
+    //? Does adding app modify settings.json so that this works? 
     const userDatabase = JSON.parse(fileContents).services[index];
     // We get index from sidebar container: which is the mapplication (DEMO)
     const [databaseType, URI] = [userDatabase[1], userDatabase[2]];

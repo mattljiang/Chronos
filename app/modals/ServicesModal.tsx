@@ -19,6 +19,7 @@ const ServicesModal: React.FC<ServicesModalProps> = React.memo(({ i, app }) => {
   );
 
   useEffect(() => {
+    // connects to db and runs fetchServicesNames
     connectToDB(i, app);
     // fetchServicesNames(app);
 

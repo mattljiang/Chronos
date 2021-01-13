@@ -52,15 +52,17 @@ const Occupied = React.memo(() => {
   const [index, setIndex] = useState<number>(0);
   const [app, setApp] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState<string>('Search...');
+  //TODO: learn more about useRef
   // Dynamic refs
   const delRef = useRef<any>([]);
 
+  //? when page re-renders, set servicesData to be empty?
   useEffect(() => {
     setServicesData([]);
     getApplications();
   }, []);
 
-  // Ask user for deletetion confirmation
+  // Ask user for deletion confirmation
   const confirmDelete = (event: ClickEvent, app: string, i: number) => {
     const message = `The application '${app}' will be permanently deleted. Continue?`;
     if (confirm(message)) deleteApp(i);
@@ -192,6 +194,7 @@ const Occupied = React.memo(() => {
                     </div>
                   </div>
                   
+                  {/* //?i don't see iconbutton and highlightofficon on the screen */}
                   <CardHeader
                     avatar={
                       <IconButton
@@ -217,12 +220,14 @@ const Occupied = React.memo(() => {
                 <hr className="cardLine"/>
 
                 <div className="cardFooter">
+                  {/* does updateicon do anything right now */}
                   <UpdateIcon className="cardFooterIcon"/>
                   <em><p id="cardFooterText">Just updated</p></em>
                 </div>
               </Card>
             </div>
           ))}
+          //?does addmodal have to be different than modal
           <Modal open={addOpen} onClose={() => setAddOpen(false)}>
             <AddModal setOpen={setAddOpen} />
           </Modal>

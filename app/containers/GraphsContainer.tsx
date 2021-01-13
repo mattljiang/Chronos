@@ -41,6 +41,7 @@ const GraphsContainer: React.FC<GraphsContainerProps> = React.memo(function Grap
   const { fetchCommsData } = useContext(CommsContext);
 
   useEffect(() => {
+    // if live, fetch data every 3 seconds. else, just fetch it once
     if (live) {
       setIntervalID(
         setInterval(function () {

@@ -62,6 +62,7 @@ const ApplicationContextProvider: React.FC = React.memo(({ children }) => {
     ipcRenderer.on('servicesResponse', (event: Electron.Event, data: any) => {
       let result: any;
       // Parse JSON response
+      //? why must you try parsing before actually parsing? Why not just set result = JSON.parse(data) or undefined it it fails
       if (tryParseJSON(data)) result = JSON.parse(data);
       // if (result.length) console.log('Number of data points (service):', result.length);
 
