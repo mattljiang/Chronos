@@ -2,3 +2,5 @@ node_modules
 *.ts
 .DS_Store
 coverage/
+/build
+/dist
